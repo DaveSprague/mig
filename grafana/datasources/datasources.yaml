@@ -4,10 +4,10 @@ datasources:
   - name: influxdb
     type: influxdb
     access: proxy
-    database: ming_default
+    database: tide_gauge
     user: admin
     url: http://influxdb:8086
     jsonData:
-      timeInterval: "15s"
+      timeInterval: "3s"
     secureJsonData:
       password:

@@ -13,13 +13,13 @@ from influxdb import InfluxDBClient
 INFLUXDB_ADDRESS = 'influxdb'
 INFLUXDB_USER = 'root'
 INFLUXDB_PASSWORD = 'root'
-INFLUXDB_DATABASE = 'balena-sense'
+INFLUXDB_DATABASE = 'tide_gauge'
 
 MQTT_ADDRESS = 'mosquitto'
 MQTT_USER = 'mqttuser'
 MQTT_PASSWORD = 'mqttpassword'
-MQTT_TOPIC = '+/power'
-MQTT_REGEX = '([^/]+)/([^/]+)'
+MQTT_TOPIC = 'tide/+/+'
+MQTT_REGEX = 'tide/([^/]+)/([^/]+)'
 MQTT_CLIENT_ID = 'MQTTInfluxDBBridge'
 
 influxdb_client = InfluxDBClient(INFLUXDB_ADDRESS, 8086, INFLUXDB_USER, INFLUXDB_PASSWORD, None)
@@ -28,7 +28,7 @@ influxdb_client = InfluxDBClient(INFLUXDB_ADDRESS, 8086, INFLUXDB_USER, INFLUXDB
 class SensorData(NamedTuple):
     location: str
     measurement: str
-    value: float
+    value: int
 
 
 def on_connect(client, userdata, flags, rc):
@@ -41,6 +41,7 @@ def on_message(client, userdata, msg):
     """The callback for when a PUBLISH message is received from the server."""
     print(msg.topic + ' ' + str(msg.payload))
     sensor_data = _parse_mqtt_message(msg.topic, msg.payload.decode('utf-8'))
+    print(f"Sensor Data: {sensor_data}")
     if sensor_data is not None:
         _send_sensor_data_to_influxdb(sensor_data)
 
@@ -52,6 +53,7 @@ def _parse_mqtt_message(topic, payload):
         measurement = match.group(2)
         if measurement == 'status':
             return None
+        print(f"{location}::{measurement}::{float(payload)}")
         return SensorData(location, measurement, float(payload))
     else:
         return None
