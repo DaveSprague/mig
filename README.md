@@ -26,6 +26,10 @@ run "docker compose up" in the repository directory
 Open your browser to "localhost:3000" to bring up Grafana
 username and password are both currently "admin"
 
+Run the test publisher client, mqtt-test-publish-client.py, on the same computer
+(or change its broker url if running on a separate device) and then create
+a dashboard in grafana, on port 3000, to see the data.
+
 It's that easy!
 
 # More detail
@@ -37,9 +41,13 @@ VS Code has a docker extension that makes it easy:
  - bring up or down the entire composition of containers
 
 # Next Steps
+ - update to latest versions of mosquitto, influxdb1.8, etc
  - Trying bring in up on a RPi
  - Integrate ngnix for reverse proxy
  - Support both a public view-only dashboard and a private, password-protected, access for creating dashboards.
+ - cleanup project
+ - - remove Dockerfile.raspberrypi3 and Dockerfile.template files since I don't think they're needed.
+ - try out the jupyterlab container, this was part of the original project and sounds handy.
 
 # Maintainer / Contributors
 
