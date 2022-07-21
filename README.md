@@ -36,7 +36,10 @@ VS Code has a docker extension that makes it easy:
  - stop/start/restart individual containers
  - bring up or down the entire composition of containers
 
-
+# Next Steps
+ - Trying bring in up on a RPi
+ - Integrate ngnix for reverse proxy
+ - Support both a public view-only dashboard and a private, password-protected, access for creating dashboards.
 
 # Maintainer / Contributors
 
@@ -44,7 +47,7 @@ VS Code has a docker extension that makes it easy:
 
 # Attribution
 
-- This is in part based on this project:
+- This is based on this project:
 - - https://github.com/DynamicDevices/ming
 
 
