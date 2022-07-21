@@ -1,4 +1,4 @@
-# MING (Mosquitto, InfluxDB, Nging, Grafana)
+# MING (Mosquitto, InfluxDB, Nginx, Grafana)
 
 MING is a containerised IoT sensor server stack in the traditions of LAMP.
 In our case the "N" in MING stands for nginx
@@ -42,9 +42,7 @@ VS Code has a docker extension that makes it easy:
 
 # Maintainer / Contributors
 
-- Alex J Lennon (@embedded_iot)
-- Julian Todd (@goatchurch)
-- Matthew Croughan (@matthewcroughan)
+- David Sprague @DaveSprague
 
 # Attribution
 
