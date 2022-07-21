@@ -46,7 +46,7 @@ VS Code has a docker extension that makes it easy:
  - Integrate ngnix for reverse proxy
  - Support both a public view-only dashboard and a private, password-protected, access for creating dashboards.
  - cleanup project
- - - remove Dockerfile.raspberrypi3 and Dockerfile.template files since I don't think they're needed.
+   - remove Dockerfile.raspberrypi3 and Dockerfile.template files since I don't think they're needed.
  - try out the jupyterlab container, this was part of the original project and sounds handy.
 
 # Maintainer / Contributors
@@ -55,8 +55,7 @@ VS Code has a docker extension that makes it easy:
 
 # Attribution
 
-- This is based on this project:
-- - https://github.com/DynamicDevices/ming
+- Started as a fork of this project: https://github.com/DynamicDevices/ming
 
 
 # Contributing
