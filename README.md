@@ -1,7 +1,6 @@
-# MING (Mosquitto, InfluxDB, Nginx, Grafana)
+# MIG (Mosquitto, InfluxDB, Grafana)
 
-MING is a containerised IoT sensor server stack in the traditions of LAMP.
-In our case the "N" in MING stands for nginx
+MIG is a containerised IoT sensor server stack in the traditions of LAMP and TIG.
 
 This is a Docker Compose collection of containers that implement:
 
@@ -11,10 +10,9 @@ This is a Docker Compose collection of containers that implement:
 
 - A Mosquitto bridge that listens for MQTT messages and sends contained data to influxDB
 
-- Grafana listening on port 80 providing a data visualisation environment for sensor data.
+- Grafana listening on port 3000 providing a data visualisation environment for sensor data.
 
 Each of these applications is built and runs in its own container.
-
 
 
 # Getting going
